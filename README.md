@@ -2,7 +2,9 @@
 
 ## Learning Goals
 
-- Introduce database management systems concepts
+- Introduce database management system concepts.
+- Introduce relational database structure.
+- Introduce SQL statements.
 
 ## Introduction
 
@@ -19,18 +21,21 @@ of simultaneous users, and thus must be managed with sophisticated software tool
   and often provides additional features including security, performance, transactions, multi-user access, and recovery. 
 - A **relational database management system** or **RDBMS** stores data in tables, columns and rows.
   - A table holds information about objects of a similar type.
-  - Each column within a table has a unique name.
+  - Each column within a table has a unique name.  A column may also be referred to as a field or attribute.
   - All values within a column have the same type and are atomic.
-  - Each row within a table represents a unique object and must have a unique identifier, called a **primary key**.
+  - A row within a table represents a unique object or entity.  A row may also be referred to as a record.
+  - Each table must define a unique identifier, called a **primary key**. 
+    - The primary key consists of one or more columns.
+    - Two rows can't contain the same set of values in their primary key column(s).
   - Rows among multiple tables can be related using **foreign keys**, in which one or more columns in
     one table store the values of the primary key of another table.
 - A **query language** is a specialized programming language designed for database systems.
   - **Structured Query Language** or **SQL** is a query language designed for relational databases.
 - **PostgreSQL** is a popular open source RDBMS.  Other RDMBS products include Oracle, MySQL, SQLite, and SQL Server.
 
-## Database Structure
+## Relational Database Structure
 
-Relational databases store data in table that consists of
+A relational database stores data in a table that consists of
 columns and rows.  Each row contains data about a unique
 entity or object, such as a person, product, or event.
 Each column stores a single atomic attribute
@@ -154,8 +159,9 @@ perform various functions on the selected data. We will work with one DQL statem
 
 - **SELECT** - retrieve data from the database.
 
-For example, the following SQL statement will retrieve rows
-from the `pet` table where the `species` column contains the value "cat":
+For example, the following SQL statement will retrieve all rows
+from the `pet` table where the `species` column contains the value "cat".
+The `*` means that every column should be displayed for each row retrieved:
 
 
 ```sql
